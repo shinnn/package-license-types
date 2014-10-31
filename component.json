@@ -1,0 +1,17 @@
+{
+  "name": "package-license-types",
+  "version": "0.1.0",
+  "description": "Extract license types from package.json data",
+  "keywords": [
+    "data",
+    "package",
+    "license",
+    "type"
+  ],
+  "repository": "shinnn/package-license-types",
+  "main": "package-license-types-cjs.js",
+  "scripts": [
+    "package-license-types-cjs.js"
+  ],
+  "license": "MIT"
+}
