@@ -1,15 +1,16 @@
 'use strict';
 
+var bowerFiles = require('bower-files');
 var test = require('tape');
 
 function runTest(description, main) {
   test(description, function(t) {
-    t.plan(9);
+    t.plan(10);
 
     t.deepEqual(main({license: 'MIT'}), ['MIT'], 'should return a license.');
 
     t.deepEqual(
-      main({licenses: ['GPL', 'BSD']}), ['GPL', 'BSD'],
+      main({license: ['GPL-3.0', 'BSD-3-Clause']}), ['GPL-3.0', 'BSD-3-Clause'],
       'should return licenses.'
     );
 
@@ -19,8 +20,13 @@ function runTest(description, main) {
     );
 
     t.deepEqual(
-      main({licenses: [{type: 'GPL'}, {type: 'BSD'}]}), ['GPL', 'BSD'],
+      main({licenses: [{type: 'GPL-3.0'}, {type: 'BSD-3-Clause'}]}), ['GPL-3.0', 'BSD-3-Clause'],
       'should return licenses from an array of objects.'
+    );
+
+    t.deepEqual(
+      main({licenses: ['foo', {type: 'bar'}]}), [],
+      'should exclude non-SPDX-license values.'
     );
 
     t.deepEqual(
@@ -44,7 +50,7 @@ function runTest(description, main) {
 
     t.throws(function() {
       main(null);
-    }, /TypeError/, 'should throw a type error when it takes falsy value.');
+    }, /TypeError/, 'should throw a type error when it takes non-object value.');
   });
 }
 
@@ -52,7 +58,10 @@ runTest('require(\'package-license-types\')', require('./'));
 
 global.window = {};
 
-var bowerMain = require('./bower.json').main;
-require(bowerMain);
+var bowerDependencies = bowerFiles({self: true}).js;
+bowerDependencies.forEach(function(dependencyPath) {
+  console.log(dependencyPath);
+  require(dependencyPath);
+});
 
 runTest('window.packageLicenseTypes', window.packageLicenseTypes);

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Extract license types from package.json data",
   "keywords": [
+    "spdx",
     "data",
     "package",
     "license",
@@ -13,5 +14,8 @@
   "scripts": [
     "package-license-types-cjs.js"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "shinnn/is-spdx-license-identifier.js": "*"
+  }
 }

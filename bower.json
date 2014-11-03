@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Extract license types from package.json data",
   "keywords": [
+    "spdx",
     "data",
     "package",
     "license",
@@ -21,10 +22,14 @@
     }
   ],
   "license": "MIT",
+  "dependencies": {
+    "is-spdx-license-identifier": "~2.0.0"
+  },
   "ignore": [
     "**/.*",
     "*.yml",
     "bower_components",
+    "components",
     "coverage",
     "node_modules",
     "test.js",

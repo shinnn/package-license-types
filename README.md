@@ -5,7 +5,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/package-license-types.svg)](https://coveralls.io/r/shinnn/package-license-types)
 [![devDependency Status](https://david-dm.org/shinnn/package-license-types/dev-status.svg)](https://david-dm.org/shinnn/package-license-types#info=devDependencies)
 
-Extract license types from [package.json](https://www.npmjs.org/doc/files/package.json.html) data
+Extract license types from package data
 
 ```javascript
 var pkg = {
@@ -25,6 +25,8 @@ var pkg = {
 
 packageLicenseTypes(pkg); //=> ['BSD-3-Clause', 'MIT']
 ```
+
+It supports [package.json](https://www.npmjs.org/doc/files/package.json.html), [bower.json](https://github.com/bower/bower.json-spec) and [component.json](https://github.com/componentjs/spec/blob/master/component.json/specifications.md).
 
 ## Installation
 
@@ -50,21 +52,35 @@ var packageLicenseTypes = require('shinnn/package-license-types');
 
 ### Standalone
 
-[Download the script file directly.](https://raw.githubusercontent.com/shinnn/package-license-types/master/package-license-types.js)
+[Download the script file directly](https://raw.githubusercontent.com/shinnn/package-license-types/master/package-license-types.js) and install the dependency.
+
+#### Dependency
+
+* [is-spdx-license-identifier](https://github.com/shinnn/is-spdx-license-identifier.js)
 
 ## API
 
 ### packageLicenseTypes(*packageData*)
 
 *packageData*: `Object`  
-Return: `Array` of `String` (license types)
+Return: `Array` of `String`
+
+It returns an array of the [SPDX license](http://spdx.org/licenses/) identifiers specified in the `license` and `licenses` properties of its first argument.
 
 ```javascript
-var fs = require('fs');
 var packageLicenseTypes = require('package-license-types');
 
-var pkg = fs.readFileSync('./package.json').toString();
+var pkg = require('./package.json');
 packageLicenseTypes(pkg); //=> ['MIT']
+```
+
+```javascript
+packageLicenseTypes({
+  licenses: [
+    'MIT',        // valid SPDX license identifier
+    'foo-bar-baz' // invalid
+  ]
+}); //=> ['MIT']
 ```
 
 It returns an empty array when it cannot find any license types from data.

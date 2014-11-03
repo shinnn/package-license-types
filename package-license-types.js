@@ -4,27 +4,32 @@
 */
 window.packageLicenseTypes = function packageLicenseTypes(pkg) {
   'use strict';
-
-  if (!pkg) {
-    throw new TypeError('Expecting an object.');
-  }
-
   var licenses;
 
   if (Array.isArray(pkg.licenses)) {
     licenses = pkg.licenses;
   } else if (pkg.license) {
-    licenses = [pkg.license];
+    if (Array.isArray(pkg.license)) {
+      licenses = pkg.license;
+    } else {
+      licenses = [pkg.license];
+    }
   } else {
     licenses = [];
   }
 
   return licenses.reduce(function(result, license) {
+    var type;
     if (typeof license === 'string') {
-      result.push(license);
+      type = license;
     } else if (license && license.type) {
-      result.push(license.type);
+      type = license.type;
     }
+
+    if (type && window.isSpdxLicenseIdentifier(type)) {
+      result.push(type);
+    }
+
     return result;
   }, []);
 };

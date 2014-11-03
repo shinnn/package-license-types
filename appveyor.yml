@@ -9,13 +9,12 @@ environment:
     - nodejs_version: '0.11'
 
 install:
-  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version)
+  - ps: Install-Product node $env:nodejs_version
+  - npm install -g npm
   - npm install
 
 build: off
 
 test_script:
-  - ps: 'npm run-script test-node #PowerShell'
-  - ps: 'npm run-script test-cli #PowerShell'
-  - cmd: npm run-script test-node
-  - cmd: npm run-script test-cli
+  - ps: 'npm test #PowerShell'
+  - cmd: npm test
