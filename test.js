@@ -1,6 +1,6 @@
 'use strict';
 
-var bowerFiles = require('bower-files');
+var requireBowerFiles = require('require-bower-files');
 var test = require('tape');
 
 function runTest(description, main) {
@@ -57,11 +57,6 @@ function runTest(description, main) {
 runTest('require(\'package-license-types\')', require('./'));
 
 global.window = {};
-
-var bowerDependencies = bowerFiles({self: true}).js;
-bowerDependencies.forEach(function(dependencyPath) {
-  console.log(dependencyPath);
-  require(dependencyPath);
-});
+requireBowerFiles({self: true});
 
 runTest('window.packageLicenseTypes', window.packageLicenseTypes);
