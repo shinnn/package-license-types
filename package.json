@@ -4,8 +4,9 @@
   "description": "Extract license types from package.json data",
   "repository": "shinnn/package-license-types",
   "scripts": {
-    "pretest": "eslint *.js & jscs *.js",
-    "test": "bower install && node test.js",
+    "bower-install": "bower install --production",
+    "pretest": "jscs *.js && eslint *.js && ${npm_package_scripts_bower_install}",
+    "test": "node test.js",
     "coverage": "istanbul cover test.js",
     "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
   },
