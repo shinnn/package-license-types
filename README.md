@@ -26,13 +26,13 @@ var pkg = {
 packageLicenseTypes(pkg); //=> ['BSD-3-Clause', 'MIT']
 ```
 
-It supports [package.json](https://www.npmjs.org/doc/files/package.json.html), [bower.json](https://github.com/bower/bower.json-spec) and [component.json](https://github.com/componentjs/spec/blob/master/component.json/specifications.md).
+It supports [package.json](https://docs.npmjs.com/files/package.json), [bower.json](https://github.com/bower/bower.json-spec) and [component.json](https://github.com/componentjs/spec/blob/master/component.json/specifications.md).
 
 ## Installation
 
 ### Package managers
 
-#### [npm](https://www.npmjs.org/) [![NPM version](https://badge.fury.io/js/package-license-types.svg)](https://www.npmjs.org/package/package-license-types)
+#### [npm](https://www.npmjs.com/) [![NPM version](https://badge.fury.io/js/package-license-types.svg)](https://www.npmjs.com/package/package-license-types)
 
 ```sh
 npm install package-license-types
