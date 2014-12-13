@@ -1,6 +1,5 @@
 {
   "name": "package-license-types",
-  "version": "1.0.0",
   "description": "Extract license types from package.json data",
   "keywords": [
     "spdx",
@@ -9,7 +8,7 @@
     "license",
     "type"
   ],
-  "main": "./package-license-types.js",
+  "main": "package-license-types.js",
   "homepage": "https://github.com/shinnn/package-license-types",
   "repository": {
     "type": "git",
@@ -28,13 +27,11 @@
   "ignore": [
     "**/.*",
     "*.yml",
+    "*.js",
+    "*.json",
     "bower_components",
     "components",
     "coverage",
-    "node_modules",
-    "test.js",
-    "package-license-types-cjs.js",
-    "package.json",
-    "component.json"
+    "node_modules"
   ]
 }

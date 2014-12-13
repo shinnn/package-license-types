@@ -14,6 +14,9 @@
   "scripts": [
     "package-license-types-cjs.js"
   ],
+  "files": [
+    "LICENSE"
+  ],
   "license": "MIT",
   "dependencies": {
     "shinnn/is-spdx-license-identifier.js": "*"
