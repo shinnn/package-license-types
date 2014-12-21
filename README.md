@@ -1,9 +1,10 @@
 # package-license-types
 
-[![Build Status](https://travis-ci.org/shinnn/package-license-types.svg?branch=master)](https://travis-ci.org/shinnn/package-license-types)
+[![Build Status](https://img.shields.io/travis/shinnn/package-license-types.svg?style=flat)](https://travis-ci.org/shinnn/package-license-types)
 [![Build status](https://ci.appveyor.com/api/projects/status/q2fudvpnd95hg5qe?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/package-license-types)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/package-license-types.svg)](https://coveralls.io/r/shinnn/package-license-types)
-[![devDependency Status](https://david-dm.org/shinnn/package-license-types/dev-status.svg)](https://david-dm.org/shinnn/package-license-types#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/shinnn/package-license-types.svg?style=flat)](https://coveralls.io/r/shinnn/package-license-types)
+[![Dependency Status](https://david-dm.org/shinnn/package-license-types.svg?style=flat)](https://david-dm.org/shinnn/package-license-types)
+[![devDependency Status](https://david-dm.org/shinnn/package-license-types/dev-status.svg?style=flat)](https://david-dm.org/shinnn/package-license-types#info=devDependencies)
 
 Extract license types from package data
 
@@ -32,13 +33,16 @@ It supports [package.json](https://docs.npmjs.com/files/package.json), [bower.js
 
 ### Package managers
 
-#### [npm](https://www.npmjs.com/) [![NPM version](https://badge.fury.io/js/package-license-types.svg)](https://www.npmjs.com/package/package-license-types)
+[![NPM version](https://img.shields.io/npm/v/package-license-types.svg?style=flat)](https://www.npmjs.com/package/package-license-types)
+[![Bower version](https://img.shields.io/bower/v/package-license-types.svg?style=flat)](https://github.com/shinnn/package-license-types/releases)
+
+#### [npm](https://www.npmjs.com/)
 
 ```sh
 npm install package-license-types
 ```
 
-#### [bower](http://bower.io/) [![Bower version](https://badge.fury.io/bo/package-license-types.svg)](https://github.com/shinnn/package-license-types/releases)
+#### [bower](http://bower.io/)
 
 ```sh
 bower install package-license-types
