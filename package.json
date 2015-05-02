@@ -16,10 +16,8 @@
       "url": "https://github.com/shinnn/package-license-types/blob/master/LICENSE"
     }
   ],
-  "main": "package-license-types-cjs.js",
   "files": [
-    "package-license-types-cjs.js",
-    "LICENSE"
+    "index.js"
   ],
   "keywords": [
     "spdx",

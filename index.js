@@ -3,7 +3,7 @@
  * https://github.com/shinnn/package-license-types
 */
 
-var isSpdxLicenseIdentifier = require('is-spdx-license-identifier');
+var isSpdxLicenseId = require('is-spdx-license-id');
 
 module.exports = function packageLicenseTypes(pkg) {
   'use strict';
@@ -29,7 +29,7 @@ module.exports = function packageLicenseTypes(pkg) {
       type = license.type;
     }
 
-    if (typeof type === 'string' && isSpdxLicenseIdentifier(type)) {
+    if (typeof type === 'string' && isSpdxLicenseId(type)) {
       result.push(type);
     }
 

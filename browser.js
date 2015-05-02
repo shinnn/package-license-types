@@ -26,7 +26,7 @@ window.packageLicenseTypes = function packageLicenseTypes(pkg) {
       type = license.type;
     }
 
-    if (type && window.isSpdxLicenseIdentifier(type)) {
+    if (type && window.isSpdxLicenseId(type)) {
       result.push(type);
     }
 

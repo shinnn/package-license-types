@@ -8,7 +8,7 @@
     "license",
     "type"
   ],
-  "main": "package-license-types.js",
+  "main": "browser.js",
   "homepage": "https://github.com/shinnn/package-license-types",
   "repository": {
     "type": "git",
