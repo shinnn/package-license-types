@@ -4,8 +4,8 @@
   "description": "Extract license types from package.json data",
   "repository": "shinnn/package-license-types",
   "scripts": {
-    "bower-install": "bower install --production",
-    "pretest": "jscs *.js && eslint *.js && ${npm_package_scripts_bower_install}",
+    "bower-install": "bower install --production --force-latest",
+    "pretest": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore . && ${npm_package_scripts_bower_install}",
     "test": "node test.js",
     "coverage": "istanbul cover test.js",
     "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
@@ -29,20 +29,15 @@
     "client-side"
   ],
   "dependencies": {
-    "is-spdx-license-identifier": "^2.0.1"
+    "is-spdx-license-id": "^1.0.0"
   },
   "devDependencies": {
-    "bower": "^1.3.12",
-    "eslint": "^0.10.2",
-    "istanbul": "^0.3.5",
-    "istanbul-coveralls": "^1.0.1",
-    "jscs": "^1.8.1",
-    "require-bower-files": "1.0.0",
-    "tape": "^3.0.3"
-  },
-  "jscsConfig": {
-    "preset": "google",
-    "maximumLineLength": 98,
-    "validateLineBreaks": "LF"
+    "@shinnn/eslintrc": "^1.0.0",
+    "bower": "^1.4.1",
+    "eslint": "^0.20.0",
+    "istanbul": "^0.3.13",
+    "istanbul-coveralls": "^1.0.2",
+    "require-bower-files": "2.0.0",
+    "tape": "^4.0.0"
   }
 }

@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "is-spdx-license-identifier": "~2.0.0"
+    "is-spdx-license-id": "~1.0.0"
   },
   "ignore": [
     "**/.*",
